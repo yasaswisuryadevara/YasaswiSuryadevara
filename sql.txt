@@ -1,0 +1,31 @@
+programmer table creation:
+create table programmer(empno number(5) unique,
+ lastname varchar(30) not null,
+ firstname varchar(30) not null,
+ hiredate date not null,
+ projid varchar(5) primary key,
+language varchar(15) not null,
+ taskno number(2) not null,
+privilage varchar(25) not null);
+
+books table creation:
+create table books(bookid number(4) primary key,
+title varchar(10) not null,
+topicid varchar(10) not null,
+publishername varchar(30) not null,
+placeofpublishing varchar(10) not null,
+price number(4) not null,
+purchasedate date not null,
+shefno varchar(3) not null);
+
+supplier table creation:
+create table customer(custid number primary key,
+   fname char(30),
+   lname char(30),
+   address char(50),
+  phone number not null,
+    city char(20),
+   country char(20),
+    datefirstpurchased date,
+suppplierid number(2),
+   foreign key(supplierid) references supplier(supplierid));
