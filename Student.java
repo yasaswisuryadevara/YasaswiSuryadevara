@@ -1,22 +1,27 @@
-package JavaCore;
+package beans;
 
 public class Student {
-	protected static int regno;
-	protected static String stdname;
-	protected static String group;
-	
-	public void display(){
-		System.out.println(regno+stdname+group);
-		
+	private int regno;
+	private String stdname;
+	private Address address;
+	public int getRegno() {
+		return regno;
 	}
+	public void setRegno(int regno) {
+		this.regno = regno;
+	}
+	public String getStdname() {
+		return stdname;
+	}
+	public void setStdname(String stdname) {
+		this.stdname = stdname;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 
-	public Student(int regno, String stdname, String group) {
-		super();
-		Student.regno = regno;
-		Student.stdname = stdname;
-		Student.group = group;
-	}
-	
-	}
-	
-	
+}
