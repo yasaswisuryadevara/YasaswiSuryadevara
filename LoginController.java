@@ -1,28 +1,27 @@
-package mvc;
+package bootmvc;
+
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import bootmvc.Login;
 @Controller
 public class LoginController {
-	@RequestMapping(value="/Login", method=RequestMethod.GET)
-	public  String showLoginForm(){
-		return "Login";
-	}
-	@RequestMapping(value="/Login",method=RequestMethod.POST)
-	public ModelAndView validate(@RequestParam("username")String user,
-			 @RequestParam("password") String pass){
-		
-		ModelAndView mav= new ModelAndView();
-		if(user.equals("admin") && pass.equals("admin"))
-			 mav.setViewName("Admin");
-		else
-			mav.setViewName("User");
-		mav.addObject("username",user);
-		return mav;
-					
-	}
+       @RequestMapping(value="/login",method=RequestMethod.GET)
+   	public String ShowLoginForm(){
+   		return "Login";
+   		
+   	}
+   	@RequestMapping(value="/login",method=RequestMethod.POST)
+   	public ModelAndView Login(@ModelAttribute("Login")
+   	          Login login){
+   		ModelAndView mav= new ModelAndView();
+   		mav.addObject(login);
+   		mav.setViewName("Welcome");
+   		return mav;
+}
+
 }

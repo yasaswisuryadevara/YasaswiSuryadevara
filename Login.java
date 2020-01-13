@@ -1,5 +1,8 @@
-package beans;
+package bootmvc;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Login {
 	private String username;
 	private String password;
